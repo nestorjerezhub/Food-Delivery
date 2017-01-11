@@ -348,6 +348,8 @@ angular.module('app.controllers', [])
 
   })
 
+
+
 .controller('productPageCtrl', function($scope) {
 
 	//onload event
@@ -360,3 +362,48 @@ angular.module('app.controllers', [])
 	});
 
 })
+
+.controller("sliderController", function($scope){
+$scope.items = [
+  {
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'Ver los productos de <a href="#/page14"> McDonald'
+
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <button class="button button-positive"> button-positive </button>',
+
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  },
+	{
+    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    sub: 'This is a <b>subtitle</b>'
+  }
+
+]
+
+});
