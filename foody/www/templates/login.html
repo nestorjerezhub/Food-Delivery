@@ -1,0 +1,20 @@
+<ion-view title="Login" class="bubble-background">
+    <ion-content padding="'true'" class="has-header" padding="true" style="background: url(img/bg1.png) center; background-size: cover;">
+        <form class="list" >
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input ng-model="user.email" type="email" placeholder="" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input ng-model="user.password" type="password" placeholder="">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button  class="button button-stable button-block " ng-click="login()" >Iniciar Sesion</button>
+
+            <a href="#/page5" class="button button-royal button-block ">No tienes cuenta? Registrate!</a>
+        </form>
+    </ion-content>
+</ion-view>

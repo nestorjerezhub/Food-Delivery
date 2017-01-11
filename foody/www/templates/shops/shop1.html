@@ -1,0 +1,38 @@
+<ion-view title="Shop1">
+    <ion-content padding="'false'" class="has-header" padding="true" style="background: url(img/bg3.png) center; background-size: cover;">
+
+
+        <div class="button-bar">
+            <a href="#/page6" class="button button-stable button-block  icon-left ion-android-funnel">Filtros</a>
+            <a href="#/page7" class="button button-stable button-block  icon ion-android-restaurant">Organizar</a>
+        </div>
+        <ion-list ng-repeat="item in menu_items">
+
+			<ion-item class="item-thumbnail-left" >
+                <img  ng-src="{{'img/'+ item.p_image_id +'.jpg'}}"  ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)" >
+
+				<p style="position:absolute;right:10px;">
+				<a  ng-click="addToCart(item.p_id,item.p_image_id,item.p_name,item.p_price)" class="button  button-balanced button-clear   icon ion-android-cart">  </a>
+				</p>
+
+				<h2  ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)" > {{item.p_name}} </h2>
+                <p   ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">Precio Bsf: {{item.p_price}}</p>
+			</ion-item>
+
+
+        </ion-list>
+
+
+		<ion-infinite-scroll
+		ng-if="!noMoreItemsAvailable"
+		on-infinite="loadMore()"
+		distance="10%">
+			<ion-infinite-scroll-content
+			loadingSpinner="bubbles">
+		</ion-infinite-scroll>
+
+
+
+
+    </ion-content>
+</ion-view>
