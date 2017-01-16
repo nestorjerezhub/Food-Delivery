@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 .controller('menuCtrl', function($scope,$http,sharedCartService,sharedFilterService) {
 
 
-	//put cart after menu
+	//Poner carrito después del menú
 	var cart = sharedCartService.cart;
 
 
@@ -36,29 +36,29 @@ angular.module('app.controllers', [])
 
 
 
-  	//loads the menu----onload event
+  	//Carga de menu----onload event
 	$scope.$on('$stateChangeSuccess', function() {
-		$scope.loadMore();  //Added Infine Scroll
+		$scope.loadMore();  //Agrega Scroll Infinito
 	});
 
-	// Loadmore() called inorder to load the list
+	// Loadmore() llama inorder para cargar lista
 	$scope.loadMore = function() {
 
 			str=sharedFilterService.getUrl();
 			$http.get(str).success(function (response){
 				$scope.menu_items = response.records;
-				$scope.hasmore=response.has_more;	//"has_more": 0	or number of items left
+				$scope.hasmore=response.has_more;	//"has_more": 0	o el número de artículos a la izquierda
 				$scope.$broadcast('scroll.infiniteScrollComplete');
 			});
 
-			//more data can be loaded or not
+			//Se pueden cargar más datos o no
 			if ( $scope.hasmore == 0 ) {
 			  $scope.noMoreItemsAvailable = true;
 			}
 	};
 
 
-	 //show product page
+	 //Mostrar la página del producto
 	$scope.showProductInfo=function (id,desc,img,name,price) {
 		 sessionStorage.setItem('product_info_id', id);
 		 sessionStorage.setItem('product_info_desc', desc);
@@ -68,7 +68,7 @@ angular.module('app.controllers', [])
 		 window.location.href = "#/page13";
 	 };
 
-	 //add to cart function
+	 //Añadir a la función de cart
 	 $scope.addToCart=function(id,image,name,price){
 		cart.add(id,image,name,price,1);
 	 };
@@ -83,7 +83,7 @@ angular.module('app.controllers', [])
 			$scope.total_amount=sharedCartService.total_amount;
 		});
 
-		//remove function
+		//remover function
 		$scope.removeFromCart=function(c_id){
 			$scope.cart.drop(c_id);
 			$scope.total_qty=sharedCartService.total_qty;
@@ -166,8 +166,8 @@ angular.module('app.controllers', [])
 
 			}).error(function() {
 					var alertPopup = $ionicPopup.alert({
-						title: 'Login failed!',
-						template: 'Please check your credentials!'
+						title: 'Login Fallido!',
+						template: 'Por favor revisa tus datos!'
 					});
 			});
 		};
@@ -186,10 +186,10 @@ angular.module('app.controllers', [])
 
 
 				if($scope.response.created=="1"){
-					$scope.title="Account Created!";
-					$scope.template="Your account has been successfully created!";
+					$scope.title="Cuenta creada!";
+					$scope.template="Tu cuenta fue creada satisfactoriamente!";
 
-					//no back option
+					//no hay opcion atras
 					$ionicHistory.nextViewOptions({
 						disableAnimate: true,
 						disableBack: true
@@ -197,12 +197,12 @@ angular.module('app.controllers', [])
 					$state.go('login', {}, {location: "replace", reload: true});
 
 				}else if($scope.response.exists=="1"){
-					$scope.title="Email Already exists";
-					$scope.template="Please click forgot password if necessary";
+					$scope.title="Email Ya existente!";
+					$scope.template="Por favor, haga clic en contraseña olvidada si es necesario";
 
 				}else{
-					$scope.title="Failed";
-					$scope.template="Contact Our Technical Team";
+					$scope.title="Fallido";
+					$scope.template="Contacta con el soporte tecnico";
 				}
 
 				var alertPopup = $ionicPopup.alert({
@@ -226,7 +226,7 @@ angular.module('app.controllers', [])
 
   $scope.getCategory = function(cat_list){
     categoryAdded = cat_list;
-	var c_string=""; // will hold the category as string
+	var c_string=""; // Tendrá la categoría como un string
 
 	for(var i=0;i<categoryAdded.length;i++){ c_string+=(categoryAdded[i].id+"||"); }
 
@@ -291,7 +291,7 @@ angular.module('app.controllers', [])
 .controller('shop1Ctrl', function($scope,$http,sharedCartService,sharedFilterService){
 
 
-  	//put cart after menu
+  	//poner carrito despues del menu
   	var cart = sharedCartService.cart;
 
 
@@ -366,42 +366,80 @@ angular.module('app.controllers', [])
 .controller("sliderController", function($scope){
 $scope.items = [
   {
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'Ver los productos de <a href="#/page14"> McDonald'
+    src:'img/shop1.jpg',
+    sub: 'TropiPizza te brinda la mejor manera de conseguir tu comida al alcance de tus dedos, desde cualquier lugar donde te encuentres!<br><h2><center><a href="#page14"> Visitar la tienda</a></center>',
+
 
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <button class="button button-positive"> button-positive </button>',
+    src:'img/shop2.jpg',
+    sub: '<h2><center><a href="#page15"> Visitar la tienda</a></center>',
+
 
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop3.jpg',
+    sub: '<h2><center><a href="#page16"> Visitar la tienda</a></center>'
   },
 	{
     src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    sub: '<h2><center><a href="#page17"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop5.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop6.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop7.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop8.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-    sub: 'This is a <b>subtitle</b>'
+    src:'img/shop9.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop10.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop11.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop12.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop13.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop14.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop15.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop16.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop17.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
+  },
+	{
+    src:'img/shop18.jpg',
+    sub: '<h2><center><a href="#page14"> Visitar la tienda</a></center>'
   }
 
 ]

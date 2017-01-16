@@ -152,14 +152,14 @@
   ionImageScale.$inject = [];
 
   function ionImageScale(){
-    
+
     return {
       restrict: 'A',
       link : link
     };
 
     function link(scope, element, attrs) {
-      
+
       var scaleImage = function(context,value) {
         if(value>0){
           if(context.naturalHeight >= context.naturalWidth){
@@ -168,15 +168,15 @@
           else{
             element.attr('height',element.parent()[0].offsetHeight+'px');
           }
-        } 
+        }
       };
-      
+
       element.bind("load" , function(e){
         var _this = this;
         if(element.parent()[0].offsetHeight > 0){
           scaleImage(this,element.parent()[0].offsetHeight);
         }
-        
+
         scope.$watch(function(){
           return element.parent()[0].offsetHeight;
         },function(newValue){
@@ -196,14 +196,14 @@
   ionRowHeight.$inject = ['ionGalleryConfig'];
 
   function ionRowHeight(ionGalleryConfig){
-    
+
     return {
       restrict: 'A',
       link : link
     };
 
     function link(scope, element, attrs) {
-      scope.$watch( 
+      scope.$watch(
         function(){
           return scope.ionGalleryRowSize;
         },
@@ -225,24 +225,24 @@
   ionSlideAction.$inject = ['$ionicGesture','$timeout'];
 
   function ionSlideAction($ionicGesture, $timeout){
-    
+
     return {
       restrict: 'A',
       link : link
     };
 
     function link(scope, element, attrs) {
-      
+
       var isDoubleTapAction = false;
-      
+
       var pinchZoom = function pinchZoom(){
           scope.$emit('ZoomStarted');
       };
-      
+
       var imageDoubleTapGesture = function imageDoubleTapGesture(event) {
-        
+
         isDoubleTapAction = true;
-        
+
         $timeout(function(){
           isDoubleTapAction = false;
           scope.$emit('DoubleTapEvent',{ 'x': event.gesture.touches[0].pageX, 'y': event.gesture.touches[0].pageY});
@@ -250,7 +250,7 @@
       };
 
       var imageTapGesture = function imageTapGesture(event) {
-        
+
         if(isDoubleTapAction === true){
           return;
         }
@@ -265,11 +265,11 @@
           },200);
         }
       };
-      
+
       var pinchEvent = $ionicGesture.on('pinch',pinchZoom,element);
       var doubleTapEvent = $ionicGesture.on('doubletap', function(e){imageDoubleTapGesture(e);}, element);
       var tapEvent = $ionicGesture.on('tap', imageTapGesture, element);
-      
+
       scope.$on('$destroy', function() {
         $ionicGesture.off(doubleTapEvent, 'doubletap', imageDoubleTapGesture);
         $ionicGesture.off(tapEvent, 'tap', imageTapGesture);

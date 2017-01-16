@@ -27,29 +27,32 @@
 
 .imageView .headerView {
   background-image: none;
-  background-color: black
+  background-color: #3D9CE6
 }
 
 .imageView .gallery-slide-view {
-  width: 98%;
-  background-color: transparent
+  width: 80%;
+  margin-top: -200px;
+  background-color: black
 }
 
 .imageView .image-subtitle {
-  color: white;
+  color: black;
   position: absolute;
   font-family: sans-serif;
-  bottom: 0px;
+  bottom: 150px;
   left: 10px;
   width: 95%;
   height: 15%;
+  text-shadow: 0px 0px 0px #555;
+  text-align: justify;
   z-index: 100
 }
 
 .imageView .listContainer {
   width: 100%;
   height: 100%;
-  background-color: black
+  background-color: white
 }
 
 .imageView .hideAll {
