@@ -1,0 +1,62 @@
+
+<ion-view title="Factura">
+    <ion-content ng-controller="sliderController" ngpadding="'true'" class="has-header" padding="true" style="background: url(img/bg3.png) center; background-size: cover;">
+  
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="img/shop1.jpg">
+          <h2>Tropi Pizza</h2>
+          <h3>Sede Principal</h3>
+          <p><h2>Teléfonos:</h2> (0246)431.9265</p>
+          <p><h2>Urb/Sector:</h2> Casco Central</p>
+          <p><h2>Dirección:</h2>Calle Infante, C.C. Colonial</p>
+            <p> PB, Local Nº. 7, Casco Central,</p>
+              <p>San Juan de los Morros</p>
+
+        </div>
+
+        <h3><center>FACTURA</center></h3>
+
+        <div class="list card">
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-pizza"></i>
+      Hamburguesa Doble Todo: bsf;
+    </a>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-beer"></i>
+      Coca Cola Zero x2: bsf;
+    </a>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-calculator"></i>
+      I.V.A(10%): bsf;
+    </a>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-card"></i>
+      Total a pagar:bsf;
+    </a>
+
+
+
+  </div>
+
+
+
+      </div>
+
+      <a href="#/page19" class="button button-calm button-block ">CONTINUAR</a>
+
+      <ion-infinite-scroll
+      ng-if="!noMoreItemsAvailable"
+      on-infinite="loadMore()"
+      distance="10%">
+        <ion-infinite-scroll-content
+        loadingSpinner="bubbles">
+      </ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>

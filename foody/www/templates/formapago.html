@@ -1,0 +1,92 @@
+<ion-view title="Datos De Pago">
+    <ion-content padding="'false'" class="has-header" padding="true" style="background: url(img/bg3.png) center; background-size: cover;">
+
+      <ion-list>
+        <div class="list card">
+        <h4>Tipo de Tarjeta de Credito</h4>
+
+        <ion-checkbox ng-model="filter.red">Visa</ion-checkbox>
+        <ion-checkbox ng-model="filter.yellow">Master Card</ion-checkbox>
+
+        <h4>Fecha de Vencimiento</h4>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Mes
+          </div>
+          <select>
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+
+
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Año
+          </div>
+          <select>
+            <option selected>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+          </select>
+        </label>
+
+        <h4>Datos Tarjeta</h4>
+        <label class="item item-input">
+            <span class="input-label">Numero de Tarjeta</span>
+            <input type="number">
+          </label>
+
+          <label class="item item-input item-icon-right">
+            <i class="icon ion-card"></i>
+              <span class="input-label">Codigo de Seguridad</span>
+              <input type="number">
+            </label>
+
+            <label class="item item-input">
+                <span class="input-label">Nombre impreso en la tarjeta</span>
+                <input type="text">
+              </label>
+          <h4>Datos Del Comprador</h4>
+              <label class="item item-input">
+                  <span class="input-label">Cedula</span>
+                  <input type="number">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Telefono</span>
+                    <input type="number">
+                  </label>
+
+
+
+
+      </ion-list>
+
+</div>
+
+<a href="#/page20" class="button button-calm button-block ">PROCESAR PAGO</a>
+
+<ion-infinite-scroll
+ng-if="!noMoreItemsAvailable"
+on-infinite="loadMore()"
+distance="10%">
+  <ion-infinite-scroll-content
+  loadingSpinner="bubbles">
+</ion-infinite-scroll>
+    </ion-content>
+</ion-view>

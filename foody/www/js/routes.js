@@ -137,8 +137,6 @@ angular.module('app.routes', [])
 
 
 
-
-
     .state('productPage', {
       url: '/page13',
       templateUrl: 'templates/productPage.html',
@@ -167,6 +165,18 @@ angular.module('app.routes', [])
       url: '/page17',
       templateUrl: 'templates/shops/shop4.html',
       controller: 'shop4Ctrl'
+    })
+
+    .state('factura1', {
+      url: '/page18',
+      templateUrl: 'templates/factura1.html',
+      controller: 'factura1Ctrl'
+    })
+
+    .state('formapago', {
+      url: '/page19',
+      templateUrl: 'templates/formapago.html',
+      controller: 'formapagoCtrl'
     })
 
     ;

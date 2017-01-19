@@ -74,6 +74,10 @@ angular.module('app.controllers', [])
 	 };
 })
 
+.controller('paymentCtrl', function($scope) {
+
+})
+
 .controller('cartCtrl', function($scope,sharedCartService,$ionicPopup,$state) {
 
 		//onload event-- to set the values
@@ -246,9 +250,7 @@ angular.module('app.controllers', [])
 	};
 })
 
-.controller('paymentCtrl', function($scope) {
 
-})
 
 .controller('profileCtrl', function($scope,$rootScope,$ionicHistory,$state) {
 
@@ -285,6 +287,10 @@ angular.module('app.controllers', [])
 })
 
 .controller('favoratesCtrl', function($scope) {
+
+})
+
+.controller('factura1Ctrl', function($scope) {
 
 })
 
@@ -347,7 +353,9 @@ angular.module('app.controllers', [])
   .controller('shop4Ctrl', function($scope) {
 
   })
+	.controller('formapagoCtrl', function($scope) {
 
+	})
 
 
 .controller('productPageCtrl', function($scope) {
