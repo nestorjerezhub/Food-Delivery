@@ -39,7 +39,7 @@
 .imageView .image-subtitle {
   color: black;
   position: absolute;
-  font-family: sans-serif;
+  font-family: sans-serif;;
   bottom: 150px;
   left: 10px;
   width: 95%;

@@ -80,7 +80,7 @@ angular.module('app.controllers', [])
 
 .controller('cartCtrl', function($scope,sharedCartService,$ionicPopup,$state) {
 
-		//onload event-- to set the values
+		//onload event-- Para establecer los valores
 		$scope.$on('$stateChangeSuccess', function () {
 			$scope.cart=sharedCartService.cart;
 			$scope.total_qty=sharedCartService.total_qty;
@@ -309,24 +309,24 @@ angular.module('app.controllers', [])
   		$scope.loadMore();  //Added Infine Scroll
   	});
 
-  	// Loadmore() called inorder to load the list
+  	// Loadmore() Llamada para cargar la lista
   	$scope.loadMore = function() {
 
   			str=sharedFilterService.getUrl();
   			$http.get(str).success(function (response){
   				$scope.menu_items = response.records;
-  				$scope.hasmore=response.has_more;	//"has_more": 0	or number of items left
+  				$scope.hasmore=response.has_more;	//"has_more": 0	O el número de artículos a la izquierda
   				$scope.$broadcast('scroll.infiniteScrollComplete');
   			});
 
-  			//more data can be loaded or not
+  			//Se pueden cargar más datos o no
   			if ( $scope.hasmore == 0 ) {
   			  $scope.noMoreItemsAvailable = true;
   			}
   	};
 
 
-  	 //show product page
+  	 //Mostrar la página del producto
   	$scope.showProductInfo=function (id,desc,img,name,price) {
   		 sessionStorage.setItem('product_info_id', id);
   		 sessionStorage.setItem('product_info_desc', desc);
@@ -370,7 +370,7 @@ angular.module('app.controllers', [])
 	});
 
 })
-
+//Galeria de imagenes del menu "Esto hay que rehacerlo, no es una forma eficinente, solo estoy probando"
 .controller("sliderController", function($scope){
 $scope.items = [
   {
@@ -390,7 +390,7 @@ $scope.items = [
     sub: '<h2><center><a href="#page16"> Visitar la tienda</a></center>'
   },
 	{
-    src:'https://yt3.ggpht.com/-avTHbIvvjKY/AAAAAAAAAAI/AAAAAAAAAAA/GtO4B-SrWkA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    src:'img/shop4.jpg',
     sub: '<h2><center><a href="#page17"> Visitar la tienda</a></center>'
   },
 	{

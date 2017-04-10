@@ -35,5 +35,12 @@
             </label>
         </form>
         <a href="#/page8" class="button button-balanced button-block ">Verificar</a>
+        <ion-infinite-scroll
+        ng-if="!noMoreItemsAvailable"
+        on-infinite="loadMore()"
+        distance="10%">
+          <ion-infinite-scroll-content
+          loadingSpinner="bubbles">
+        </ion-infinite-scroll>
     </ion-content>
 </ion-view>
